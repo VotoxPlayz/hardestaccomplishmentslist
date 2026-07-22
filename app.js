@@ -77,35 +77,30 @@ function selectAchievement(id) {
     document.getElementById('m-impact').innerText = activeAchievement.personalImpact + '/10';
     document.getElementById('m-worth').innerText = activeAchievement.wasItWorthIt;
 
-    // Fill Calculator Fields
-    document.getElementById('c-mental').value = activeAchievement.zetaComponents.mental;
-    document.getElementById('c-consistency').value = activeAchievement.zetaComponents.consistency;
-    document.getElementById('c-learning').value = activeAchievement.zetaComponents.learning;
-    document.getElementById('c-pressure').value = activeAchievement.zetaComponents.pressure;
-    document.getElementById('c-time').value = activeAchievement.zetaComponents.time;
-    document.getElementById('c-mechanical').value = activeAchievement.zetaComponents.mechanical;
+    // Fill Non-Editable Zeta Breakdown Values
+    document.getElementById('c-mental').innerText = activeAchievement.zetaComponents.mental.toLocaleString() + ' ζ';
+    document.getElementById('c-consistency').innerText = activeAchievement.zetaComponents.consistency.toLocaleString() + ' ζ';
+    document.getElementById('c-learning').innerText = activeAchievement.zetaComponents.learning.toLocaleString() + ' ζ';
+    document.getElementById('c-pressure').innerText = activeAchievement.zetaComponents.pressure.toLocaleString() + ' ζ';
+    document.getElementById('c-time').innerText = activeAchievement.zetaComponents.time.toLocaleString() + ' ζ';
+    document.getElementById('c-mechanical').innerText = activeAchievement.zetaComponents.mechanical.toLocaleString() + ' ζ';
 
     // Reflection
     document.getElementById('view-reflection').innerText = activeAchievement.reflection;
 }
 
-// Live Dynamic Recalculation inside detail panel
-function recalculateZeta() {
-    const m = Number(document.getElementById('c-mental').value) || 0;
-    const c = Number(document.getElementById('c-consistency').value) || 0;
-    const l = Number(document.getElementById('c-learning').value) || 0;
-    const p = Number(document.getElementById('c-pressure').value) || 0;
-    const t = Number(document.getElementById('c-time').value) || 0;
-    const mech = Number(document.getElementById('c-mechanical').value) || 0;
+// Search and Filter Logic
+document.getElementById('search-input')?.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    const filtered = achievements.filter(a => a.title.toLowerCase().includes(q) || a.tags.some(t => t.toLowerCase().includes(q)));
+    renderSidebar(filtered);
+});
 
-    const sum = m + c + l + p + t + mech;
-    document.getElementById('m-zeta-total').innerText = sum.toLocaleString() + ' ζ';
-
-    if (activeAchievement) {
-        activeAchievement.zetaComponents = { mental: m, consistency: c, learning: l, pressure: p, time: t, mechanical: mech };
-        renderSidebar(achievements);
-    }
-}
+document.getElementById('category-filter')?.addEventListener('change', (e) => {
+    const cat = e.target.value;
+    const filtered = cat === 'ALL' ? achievements : achievements.filter(a => a.category === cat);
+    renderSidebar(filtered);
+});
 
 // Initialize App
 window.addEventListener('DOMContentLoaded', loadAchievements);
