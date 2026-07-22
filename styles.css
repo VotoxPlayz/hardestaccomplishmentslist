@@ -126,7 +126,7 @@ body {
     border: 1px solid var(--border);
 }
 
-/* 10 Info Metric Boxes Grid */
+/* Metric Boxes Grid */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -167,14 +167,16 @@ body {
 }
 
 .calc-field { display: flex; flex-direction: column; gap: 0.3rem; }
-.calc-field label { font-size: 0.8rem; color: var(--text-muted); }
-.calc-input {
+.calc-label { font-size: 0.8rem; color: var(--text-muted); }
+
+.calc-val {
     background: var(--bg-dark);
     border: 1px solid var(--border);
     color: var(--text);
-    padding: 0.5rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 6px;
-    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .reflection-text { line-height: 1.6; color: #d0d7de; font-size: 0.95rem; }
