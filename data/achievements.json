@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "rank": 1,
+    "title": "Rust 100%",
+    "category": "Games",
+    "completionDate": "2024-03-15",
+    "thumbnail": "https://picsum.photos/seed/rust/600/350",
+    "embedVideoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "listPercent": 74.8,
+    "timeTakenHours": 420,
+    "attempts": 14250,
+    "peakHeartRate": 178,
+    "avgHeartRate": 142,
+    "enjoyment": 9,
+    "personalImpact": 8,
+    "wouldDoAgain": "Yes",
+    "wasItWorthIt": "100%",
+    "zetaComponents": {
+      "mental": 18000,
+      "consistency": 15000,
+      "learning": 9000,
+      "pressure": 22000,
+      "time": 17000,
+      "mechanical": 14000
+    },
+    "tags": ["2.2", "Hardcore", "Fast-Paced", "Timings", "Nerve Control"],
+    "reflection": "This was one of the most grueling gaming achievements I have ever attempted. Reaching past the List% barrier required unmatched nerve control."
+  },
+  {
+    "id": 2,
+    "rank": 2,
+    "title": "Congregation 100%",
+    "category": "Games",
+    "completionDate": "2024-01-20",
+    "thumbnail": "https://picsum.photos/seed/cong/600/350",
+    "embedVideoUrl": "",
+    "listPercent": 72.4,
+    "timeTakenHours": 210,
+    "attempts": 28900,
+    "peakHeartRate": 165,
+    "avgHeartRate": 130,
+    "enjoyment": 8,
+    "personalImpact": 9,
+    "wouldDoAgain": "No",
+    "wasItWorthIt": "Yes",
+    "zetaComponents": {
+      "mental": 22000,
+      "consistency": 20000,
+      "learning": 11000,
+      "pressure": 21000,
+      "time": 12000,
+      "mechanical": 6000
+    },
+    "tags": ["Patience", "Atmospheric", "Timing"],
+    "reflection": "Congregation tests raw patience and nerve endurance above all else. The visual atmosphere and drop build extreme tension."
+  }
+]
