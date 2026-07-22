@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeta Archive | Personal Achievement List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">ZETA <span class="accent">LIST</span></div>
+        <div class="nav-controls">
+            <input type="text" id="search-input" placeholder="Search achievements...">
+            <select id="category-filter">
+                <option value="ALL">All Categories</option>
+                <option value="Games">Games</option>
+                <option value="Academics">Academics</option>
+                <option value="Fitness">Fitness</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar-list" id="sidebar-list">
+            </aside>
+
+        <main class="main-content" id="main-content">
+            <section class="detail-header">
+                <h1 id="view-title">Select an Achievement</h1>
+                <p id="view-subtitle" class="subtitle">Select an entry from the list to inspect detailed Zeta metrics.</p>
+                
+                <div class="tags-row" id="view-tags"></div>
+            </section>
+
+            <section class="media-container" id="media-container">
+                <img id="view-media-img" src="" alt="Achievement media" style="display:none;">
+            </section>
+
+            <section class="metrics-grid">
+                <div class="metric-box">
+                    <span class="m-label">Total Zeta Score</span>
+                    <span class="m-value accent mono" id="m-zeta-total">0 ζ</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">List% Barrier</span>
+                    <span class="m-value mono" id="m-list-percent">0%</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Completion Date</span>
+                    <span class="m-value mono" id="m-date">--</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Time Invested</span>
+                    <span class="m-value mono" id="m-time">0h</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Attempts</span>
+                    <span class="m-value mono" id="m-attempts">0</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Peak Heart Rate</span>
+                    <span class="m-value mono" id="m-peak-hr">-- BPM</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Avg Heart Rate</span>
+                    <span class="m-value mono" id="m-avg-hr">-- BPM</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Enjoyment</span>
+                    <span class="m-value mono" id="m-enjoyment">0/10</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Personal Impact</span>
+                    <span class="m-value mono" id="m-impact">0/10</span>
+                </div>
+                <div class="metric-box">
+                    <span class="m-label">Was It Worth It?</span>
+                    <span class="m-value mono" id="m-worth">--</span>
+                </div>
+            </section>
+
+            <section class="panel-section">
+                <h2>Zeta Score ($\zeta$) Component Breakdown</h2>
+                <div class="zeta-calc-grid">
+                    <div class="calc-field">
+                        <label>Mental Challenge</label>
+                        <input type="number" id="c-mental" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                    <div class="calc-field">
+                        <label>Consistency</label>
+                        <input type="number" id="c-consistency" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                    <div class="calc-field">
+                        <label>Learning Curve</label>
+                        <input type="number" id="c-learning" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                    <div class="calc-field">
+                        <label>Pressure / Nerves</label>
+                        <input type="number" id="c-pressure" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                    <div class="calc-field">
+                        <label>Time Investment</label>
+                        <input type="number" id="c-time" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                    <div class="calc-field">
+                        <label>Mechanical Skill</label>
+                        <input type="number" id="c-mechanical" class="calc-input" oninput="recalculateZeta()">
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel-section">
+                <h2>Personal Reflection</h2>
+                <p class="reflection-text" id="view-reflection"></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
